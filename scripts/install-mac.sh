@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Install everything Jarvis needs on macOS 12 (Monterey) or later.
+# Install everything ARIA needs on macOS 12 (Monterey) or later.
 #
 # Usage: bash scripts/install-mac.sh [--no-optional] [--build]
 
@@ -96,15 +96,15 @@ if [ -f "$REPO_ROOT/package.json" ]; then
   ok "npm dependencies installed"
 
   if [ "$DO_BUILD" -eq 1 ]; then
-    say "Building a universal Jarvis"
+    say "Building a universal ARIA"
     (cd "$REPO_ROOT" && npm run tauri -- build --target universal-apple-darwin)
     ok "the .dmg is in src-tauri/target/universal-apple-darwin/release/bundle/dmg/"
   fi
 fi
 
-printf '\n%s%sJarvis is ready.%s\n' "$GREEN" "$BOLD" "$RESET"
+printf '\n%s%sARIA is ready.%s\n' "$GREEN" "$BOLD" "$RESET"
 printf '  %sStart it with:%s npm run desktop:dev\n' "$DIM" "$RESET"
 printf '  %sOffline voice:%s bash scripts/download-models.sh\n' "$DIM" "$RESET"
 printf '\n%sOne more step:%s macOS gatekeeps screen capture and input control.\n' "$YELLOW$BOLD" "$RESET"
-printf '  Grant Jarvis %sScreen Recording%s and %sAccessibility%s under\n' "$BOLD" "$RESET" "$BOLD" "$RESET"
+printf '  Grant ARIA %sScreen Recording%s and %sAccessibility%s under\n' "$BOLD" "$RESET" "$BOLD" "$RESET"
 printf '  System Settings → Privacy & Security, then restart the app.\n'
