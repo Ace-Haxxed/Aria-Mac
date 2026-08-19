@@ -213,7 +213,7 @@ NOVA can control your device. Read what it asks before you approve it.
 |---|---|---|
 | **Android** | [Nova-Android](https://github.com/Ace-Haxxed/Nova-Android) | Open [Releases](https://github.com/Ace-Haxxed/Nova-Android/releases/latest) on the phone and tap the APK |
 | **iOS** | [Nova-Ios](https://github.com/Ace-Haxxed/Nova-Ios) | Xcode with a free Apple ID (7-day cert) |
-| **Arch Linux** | [Nova](https://github.com/Ace-Haxxed/Nova) | `scripts/install-arch.sh`, then `scripts/install.sh` |
+| **Arch Linux** | [Nova](https://github.com/Ace-Haxxed/Nova-Arch) | `scripts/install-arch.sh`, then `scripts/install.sh` |
 | **Debian / Ubuntu** | [Nova-Debian](https://github.com/Ace-Haxxed/Nova-Debian) | `scripts/install-debian.sh`, then `scripts/install.sh` |
 | **Fedora** | [Nova-Fedora](https://github.com/Ace-Haxxed/Nova-Fedora) | `scripts/install-fedora.sh`, then `scripts/install.sh` |
 | **Windows** | [Nova-Windows](https://github.com/Ace-Haxxed/Nova-Windows) | `scripts\install-windows.ps1`, then build the `.msi` |
