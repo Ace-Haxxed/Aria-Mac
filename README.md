@@ -17,7 +17,7 @@ one target.
 ## Install
 
 ```bash
-git clone https://github.com/Ace-Haxxed/Aria-Mac
+git clone https://github.com/Ace-Haxxed/Nova-Macos
 cd Nova-Mac
 bash scripts/install-mac.sh
 npm install
@@ -211,9 +211,9 @@ NOVA can control your device. Read what it asks before you approve it.
 
 | Platform | Repository | Install |
 |---|---|---|
-| **Android** | [Nova-Android](https://github.com/Ace-Haxxed/Aria-Android) | Open [Releases](https://github.com/Ace-Haxxed/Aria-Android/releases/latest) on the phone and tap the APK |
-| **iOS** | [Nova-Ios](https://github.com/Ace-Haxxed/Aria-Ios) | Xcode with a free Apple ID (7-day cert) |
-| **Arch Linux** | [Nova](https://github.com/Ace-Haxxed/Aria) | `scripts/install-arch.sh`, then `scripts/install.sh` |
-| **Debian / Ubuntu** | [Nova-Debian](https://github.com/Ace-Haxxed/Aria-Debian) | `scripts/install-debian.sh`, then `scripts/install.sh` |
-| **Fedora** | [Nova-Fedora](https://github.com/Ace-Haxxed/Aria-Fedora) | `scripts/install-fedora.sh`, then `scripts/install.sh` |
-| **Windows** | [Nova-Windows](https://github.com/Ace-Haxxed/Aria-Windows) | `scripts\install-windows.ps1`, then build the `.msi` |
+| **Android** | [Nova-Android](https://github.com/Ace-Haxxed/Nova-Android) | Open [Releases](https://github.com/Ace-Haxxed/Nova-Android/releases/latest) on the phone and tap the APK |
+| **iOS** | [Nova-Ios](https://github.com/Ace-Haxxed/Nova-Ios) | Xcode with a free Apple ID (7-day cert) |
+| **Arch Linux** | [Nova](https://github.com/Ace-Haxxed/Nova) | `scripts/install-arch.sh`, then `scripts/install.sh` |
+| **Debian / Ubuntu** | [Nova-Debian](https://github.com/Ace-Haxxed/Nova-Debian) | `scripts/install-debian.sh`, then `scripts/install.sh` |
+| **Fedora** | [Nova-Fedora](https://github.com/Ace-Haxxed/Nova-Fedora) | `scripts/install-fedora.sh`, then `scripts/install.sh` |
+| **Windows** | [Nova-Windows](https://github.com/Ace-Haxxed/Nova-Windows) | `scripts\install-windows.ps1`, then build the `.msi` |
