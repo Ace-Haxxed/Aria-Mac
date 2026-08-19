@@ -5,12 +5,12 @@
 //! System Events via `osascript` — the same API a native client would use,
 //! reached over Apple's own scripting bridge.
 //!
-//! Window control requires the user to grant ARIA Accessibility permission
+//! Window control requires the user to grant NOVA Accessibility permission
 //! (System Settings → Privacy & Security → Accessibility). The setup wizard
 //! checks for this and links straight to the pane.
 
 use super::{input, resolve_window, MouseButton, Point, Region, ScrollDirection, WindowInfo};
-use crate::util::{run, run_owned, JResult, AriaError};
+use crate::util::{run, run_owned, JResult, NovaError};
 
 async fn osascript(script: &str) -> JResult<String> {
     let out = run("osascript", &["-e", script]).await?;
@@ -18,12 +18,12 @@ async fn osascript(script: &str) -> JResult<String> {
         let stderr = out.stderr.trim();
         // -1743 is the Accessibility-permission denial; give the real fix.
         if stderr.contains("-1743") || stderr.contains("not allowed assistive") {
-            return Err(AriaError::msg(
+            return Err(NovaError::msg(
                 "macOS denied Accessibility access. Grant it under System Settings → \
-                 Privacy & Security → Accessibility, then restart ARIA.",
+                 Privacy & Security → Accessibility, then restart NOVA.",
             ));
         }
-        return Err(AriaError::msg(format!("osascript failed: {stderr}")));
+        return Err(NovaError::msg(format!("osascript failed: {stderr}")));
     }
     Ok(out.stdout)
 }
@@ -44,7 +44,7 @@ pub async fn screenshot(region: Option<Region>) -> JResult<Vec<u8>> {
 
     let out = run_owned("screencapture", &args).await?;
     if !out.ok() && !path.exists() {
-        return Err(AriaError::msg(format!(
+        return Err(NovaError::msg(format!(
             "screencapture failed: {}",
             out.stderr.trim()
         )));
@@ -144,7 +144,7 @@ async fn target_window(target: &str) -> JResult<(String, String)> {
     let windows = list_windows().await?;
     resolve_window(&windows, target)
         .map(|w| (w.app.clone(), w.title.clone()))
-        .ok_or_else(|| AriaError::msg(format!("no window matching `{target}`")))
+        .ok_or_else(|| NovaError::msg(format!("no window matching `{target}`")))
 }
 
 fn escape(s: &str) -> String {

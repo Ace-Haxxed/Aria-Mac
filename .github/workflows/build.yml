@@ -85,7 +85,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: aria-macos
+          name: nova-macos
           retention-days: 14
           if-no-files-found: error
           path: |
